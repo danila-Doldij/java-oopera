@@ -1,4 +1,5 @@
 package practicum.theatre;
+
 import java.util.ArrayList;
 
 public class Show {
@@ -40,13 +41,14 @@ public class Show {
     public void addActor(Actor actor) {
         if (listOfActors.contains(actor)) {
             System.out.println("Актёр " + actor.getName() + " " + actor.getSurname() +
-                               "уже участвует в спектакле '" + title + "'");
+                    "уже участвует в спектакле '" + title + "'");
             return;
         }
 
         listOfActors.add(actor);
         System.out.println("Актёр " + actor.getName() + " " + actor.getSurname() +
-                           "успешно добавлен в спектакль '" + title + "'");
+                " успешно добавлен в спектакль '" + title + "'");
+        System.out.println();
     }
 
     public void replaceTheActor(Actor newActor, String surnameToReplace) {
@@ -54,7 +56,7 @@ public class Show {
 
         for (int i = 0; i < listOfActors.size(); i++) {
             Actor currentActor = listOfActors.get(i);
-            if(currentActor.getSurname().equals(surnameToReplace)) {
+            if (currentActor.getSurname().equals(surnameToReplace)) {
                 indexToReplace = i;
                 break;
             }
@@ -68,6 +70,6 @@ public class Show {
         Actor oldActor = listOfActors.set(indexToReplace, newActor);
 
         System.out.println("Актёр " + oldActor.getName() + " " + oldActor.getSurname() +
-                           " заменён на актёра " + newActor.getName() + " " + newActor.getSurname() + ".");
+                " заменён на актёра " + newActor.getName() + " " + newActor.getSurname() + ".");
     }
 }
